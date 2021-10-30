@@ -28,14 +28,10 @@
     "cy:run": "cypress run",
     "cy:open": "cypress open",
     "postinstall": "husky install",
-    "lint": "prettier --check .",
-    "format": "prettier --write ."
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "CI=true yarn test"
-    }
+    "lint": "eslint cypress src",
+    "lint:nowarn": "eslint cypress src --max-warnings=0",
+    "format": "prettier --write .",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -73,5 +69,8 @@
     "lint-staged": "^11.2.6",
     "prettier": "^2.3.0",
     "redux-mock-store": "^1.5.4"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix"
   }
 }
