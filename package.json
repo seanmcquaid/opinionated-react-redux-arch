@@ -27,12 +27,14 @@
     "eject": "react-scripts eject",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "lint": "prettier --check .",
+    "format": "prettier --write ."
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn test"
-    }
+    "pre-commit": "prettier --write . && yarn test && git add -A ."
+    } 
   },
   "eslintConfig": {
     "extends": [
