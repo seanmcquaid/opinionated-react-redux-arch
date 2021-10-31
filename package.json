@@ -71,6 +71,6 @@
     "redux-mock-store": "^1.5.4"
   },
   "lint-staged": {
-    "*.js": "eslint --fix"
+    "*.js": "eslint src cypress --fix"
   }
 }
